@@ -35,12 +35,12 @@
                         <a :href="viewUrl(lcon.blog_id)">{{ lcon.display_name  }}</a>
                     </div>
                 </div>
-                <div class="blog-popular-content">
+                <!-- <div class="blog-popular-content">
                     <p>Popular contents</p>
                     <div v-for="pcon in contents.popular_contents" :key="pcon.blog_id">
                     <a :href="viewUrl(pcon.blog_id)">{{ pcon.display_name  }}</a>
                     </div>
-                </div>
+                </div> -->
             </section>
         </div>
        

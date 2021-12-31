@@ -1,9 +1,9 @@
 <template>
     <footer>
-        <a href="/aboutus">About Us</a>
+        <a href="/aboutus">Developers | v1.0 </a>
     </footer>
 </template>
-
+    
 
 <script>
 export default {

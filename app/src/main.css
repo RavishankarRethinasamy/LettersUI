@@ -156,3 +156,22 @@ footer a{
     margin-left: 50%;
     font-style: italic;
 }
+
+footer a:hover{
+    color: #27803d  ;
+    /* font-weight: 700; */
+    font-style: normal;
+}
+
+
+.about-us{
+    display: flexbox;
+}
+
+.fd p{
+    margin-top: -1%;
+}
+
+.cfd p{
+    margin-top: -1%;
+}
