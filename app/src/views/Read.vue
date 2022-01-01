@@ -9,7 +9,7 @@
             <section class="blog-container">
                 <h5>{{ contents.display_name }}</h5>
                 <div v-for="(con, index) in contents.data" :key="index">
-                    <p>{{ con.value }}</p >
+                    <pre>{{ con.value }}</pre>
                 </div>
                 <!-- <br> -->
                 <div class="user-touch-div">
