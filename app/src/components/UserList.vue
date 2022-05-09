@@ -10,17 +10,12 @@
                                 <div id="userHelp" class="text-dark">
                                     <ol class="my-2">
                                         <li>
-                                            Monetization details for writing the letters and the consumers
-                                            pays wil    l be released in the version (v2.0) TBD
-                                        </li>
-                                        
-                                        <li>
-                                            Stay writing and answering questions
+                                            Monetization details for writing the letters will be released in the upcoming version (v2.0) Release date: TBD
                                         </li>
 
                                         <li>
-                                            Get atleast 1000 pays overall from all letters. It will be easy to be monetized 
-                                            when the complete support released.
+                                            Get atleast 25 pays for each letters. There will be minumum required pays
+                                            for an letter to be eligible for monetization. Be good at the quality of the content.
                                         </li>
 
                                         <li>
@@ -28,7 +23,7 @@
                                         </li>
 
                                         <li>
-                                            V2.0 needs critical analysis since it will be monetized version to implement that we are doing in this version
+                                            What If I don't get pays ? Still, You will be getting money based on the views. Again detail in v2.0
                                         </li>
                                     </ol>
                                 </div>

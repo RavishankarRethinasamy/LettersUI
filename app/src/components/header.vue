@@ -413,7 +413,6 @@ export default {
             this.$router.push('/')
         },
         async handleLogin() {
-            console.log(this.remember)
             if(!this.email){
                 this.errShow.emailNull = true
                 return

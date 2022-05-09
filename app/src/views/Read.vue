@@ -142,6 +142,13 @@ pre{
     color: white;
 }
 
+.ql-align-right{
+    text-align: right;
+}
+
+.ql-align-center{
+    text-align: center;
+}
 
 
 </style>

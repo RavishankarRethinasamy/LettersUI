@@ -53,7 +53,7 @@
                         </div>
 
 
-                         <div v-if="Err.noContent" id="userHelp" class="text-dark fs-4" style="margin-top: 100px">
+                         <div v-if="Err.noContent" id="userHelp" class="text-dark fs-4" style="margin-top: 10px">
                             No contents available with the searched words. Want to raise a question or write a story
                             <p><a href="/write" class="btn btn-primary">Write</a></p>
                         </div>
@@ -63,7 +63,7 @@
             </div>
             
         </div>
-         <div style="height: 500px"></div>
+         <div style="height: 300px"></div>
         <Footer />
     </div>
 </template>

@@ -93,7 +93,7 @@
           <!-- <p><i class="fas fa-home me-3"></i> OMR, Chennai, TamilNadu</p> -->
           <p>
             <i class="fas fa-envelope me-3"></i>
-            ravishankar@theletters.in
+            bot@theletters.in
           </p>
           <!-- <p><i class="fas fa-phone me-3"></i></p> -->
         </div>

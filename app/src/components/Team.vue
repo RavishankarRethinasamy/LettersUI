@@ -4,12 +4,9 @@
     <Header />
 
         <div class="container" style="margin-top: 10%">
-            <div class="row">
-                
-                <h1>Founder details</h1>
-            </div>
+            <h1>Founder details</h1>
         </div>
-
+        <div style="height: 400px"></div>
     <Footer />
 </div>
 

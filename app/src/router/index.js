@@ -4,7 +4,6 @@ import Read from "../views/Read.vue"
 import Write from "../components/Write.vue"
 import UserList from "../components/UserList.vue"
 import Team from "../components/Team.vue"
-import Gitlogin from "../components/Gitlogin.vue"
 
 const routes = [
   {
@@ -51,11 +50,6 @@ const routes = [
     path: '/team',
     name: 'Team',
     component: Team
-  },
-  {
-    path: '/git_login',
-    name: 'Gitlogin',
-    component: Gitlogin
   }
 ]
 

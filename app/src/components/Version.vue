@@ -11,14 +11,8 @@
                         Hi
                     </li>
                 </ol>
-
             </div>
         </div>
-
-
-
-
-
         <Footer />
 
     </div>
