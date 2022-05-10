@@ -8,7 +8,7 @@
 
                 <p class="fs-2">Have a story to tell or a question to be raised ?</p> 
                 Hit anything about fashion, product reviews, cinema, lifestyle, parenting, political, technology, AI, news,
-                literature etc...search the categories available. Create a new category if needed.
+                literature etc...
             </div>
 
             <form class="my-4">
@@ -34,18 +34,7 @@
                     value="question" />
                 <label class="form-check-label" for="inlineRadio2">Question</label>
                 </div>
-                 <div id="userHelp" class="text-dark fs-6" >
-                    <cite>Story let the writer to get the pay option so that the consumers can pay</cite>
-                    <br>
-                    <cite>Question let the writer to give pay option to others so that the better answer providers can get paid</cite> 
-                </div>
                 <cite v-if="errShow.checkNull" class="error fs-6">Choose what do you want to write ?</cite>
-
-               <!-- Category option should come-->
-                <!-- <select name="" id="">
-                
-                </select> -->
-
 
                 
                 <div class="form-outline my-3 border">

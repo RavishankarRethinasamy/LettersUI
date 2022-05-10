@@ -121,7 +121,7 @@
                                             class="form-control active" 
                                             @click="errShow.emailNull = errShow.login = false"
                                              />
-                                        <label class="form-label" for="lEid">Username / Email</label>
+                                        <label class="form-label active" for="lEid">Username / Email</label>
                                         </div>
                                         <cite v-if="errShow.emailNull" class="error fs-6">username or email should be given</cite>
                                     
@@ -134,7 +134,7 @@
                                             class="form-control active" 
                                             @click.prevent ="errShow.passNull = errShow.login = false"
                                             />
-                                        <label class="form-label" for="lpwd">Password</label>
+                                        <label class="form-label active" for="lpwd">Password</label>
                                         </div>
                                         <cite v-if="errShow.passNull" class="error fs-6">password should not be empty </cite>
                                         
@@ -216,7 +216,7 @@
                                     id="spuname"
                                     @click.prevent ="errShow.userNull = false"
                                     class="form-control"/>
-                                <label class="form-label" for="spuname">User name</label>
+                                <label class="form-label active" for="spuname">User name</label>
                                 </div>
                                 <cite v-if="errShow.userNull" class="error fs-6">username should not be empty </cite>
 
@@ -227,7 +227,7 @@
                                     id="speid"
                                     @click.prevent ="errShow.emailNull =  errShow.emailRegex = false" 
                                     class="form-control"/>
-                                <label class="form-label" for="speid">Email address</label>
+                                <label class="form-label active" for="speid">Email address</label>
                                 </div>
                                 <cite v-if="errShow.emailNull" class="error fs-6">email should not be empty </cite>
                                 <cite v-if="errShow.emailRegex" class="error fs-6">email is not valid</cite>
@@ -239,7 +239,7 @@
                                     id="spwd" 
                                     @click.prevent ="errShow.passNull = errShow.passRegex = false"
                                     class="form-control"/>
-                                <label class="form-label" for="spwd">Password</label>
+                                <label class="form-label active" for="spwd">Password</label>
                                 </div>
                                 <cite v-if="errShow.passNull" class="error fs-6">password should not be empty </cite>
                                 <cite v-if="errShow.passRegex" class="error fs-6">password is not valid. Use atleast 8 chars 
@@ -253,7 +253,7 @@
                                     id="srpwd" 
                                     @click.prevent ="errShow.rpassNull = errShow.passMismatch = false"
                                     class="form-control"/>
-                                <label class="form-label" for="spwd">Repeat password</label>
+                                <label class="form-label active" for="spwd">Repeat password</label>
                                 </div>
                                 <cite v-if="errShow.rpassNull" class="error fs-6">Repeat password should not be empty </cite>
                                 <cite v-if="errShow.passMismatch" class="error fs-6">Password not matched. check again </cite>
@@ -286,9 +286,14 @@
                                     <!-- Email input -->
                                     <div v-if="showForgot">
                                         <div class="form-outline mb-4">
-                                        <input type="email" id="fpeid" v-model="email" class="form-control" />
-                                        <label class="form-label" for="fpeid">Email address</label>
+                                        <input type="email" id="fpeid" 
+                                        v-model="forgotEmail" 
+                                        class="form-control" 
+                                        @click.prevent ="femailNull= false"
+                                        />
+                                        <label class="form-label active" for="fpeid">Email address</label>
                                         </div>
+                                        <cite v-if="errShow.femailNull" class="error fs-6">email should not be empty </cite>
                                         <!-- Submit button -->
                                         <button v-if="!spinner.getOTP" type="submit" class="btn btn-primary btn-block mb-4" @click.prevent ="handleForgotPassword">Get OTP</button>
                                         <!-- spinner -->
@@ -370,6 +375,7 @@ export default {
         return{
             username: '',
             email: '',
+            forgotEmail: '',
             password: '',
             rPassword: '',
             remember:'',
@@ -394,6 +400,7 @@ export default {
             errShow: {
                 userNull: false,
                 emailNull: false,
+                femailNull: false,
                 passNull: false,
                 rpassNull: false,
                 emailRegex: false,
@@ -507,15 +514,21 @@ export default {
             this.$router.push(`/search/${this.searchValue}`).then(res => this.$router.go())
         },
         async handleForgotPassword(){
+            if (!this.forgotEmail){
+                this.errShow.femailNull = true
+                return
+            }
             this.spinner.getOTP = 1
             let forgotPwd = urls().VIM_BASE + urls().FORGOT_PASSWORD
             const response = await axios.post(forgotPwd, {
-                "email": this.email
+                "email": this.forgotEmail
             })
+            console.log(response)
             if (response.data.status == "success"){
                 this.spinner.getOTP = 0
                 this.showForgot = false
                 this.otpSent = true
+                this.succShow.resetPass = response.data.message
             }
             else{
                 this.spinner.getOTP = 0

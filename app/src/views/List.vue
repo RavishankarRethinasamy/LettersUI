@@ -54,7 +54,7 @@
 
 
                          <div v-if="Err.noContent" id="userHelp" class="text-dark fs-4" style="margin-top: 10px">
-                            No contents available with the searched words. Want to raise a question or write a story
+                            No Letters available. Want to raise a question or write a story
                             <p><a href="/write" class="btn btn-primary">Write</a></p>
                         </div>
                 </div>
