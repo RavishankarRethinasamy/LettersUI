@@ -44,7 +44,9 @@
                         HTML and CSS. To be honest, I have used Material Design Boostrap which is a readymade framework
                         for all UI components. Still, we study through it. 
                     </li>
-                    
+                    <li>
+                        Linux Computing
+                    </li>
                     <li>
                         Deployment process
                     </li>
