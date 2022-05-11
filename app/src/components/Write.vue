@@ -39,12 +39,13 @@
                 
                 <div class="form-outline my-3 border">
                     <input 
-                        type="text" 
-                        id="blogName" 
-                        class="form-control" 
+                        type="text"
+                        id="blogName"
+                        class="form-control"
+                        autocomplete="off"
                         @click.prevent ="errShow.nameNull = false"
                         v-model="name" />
-                    <label class="form-label" for="blogName">Name</label>
+                    <label class="form-label active" for="blogName">Name</label>
                 </div>
                 <cite v-if="errShow.nameNull" class="error fs-6">Name should not be empty </cite>
 

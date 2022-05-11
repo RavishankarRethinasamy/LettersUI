@@ -47,6 +47,39 @@
                             </div>
                     </div>
                 </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="ConfirmModal" tabindex="-1" aria-labelledby="ConfirmModal" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-body">
+                            {{ modalMessage }}
+                        </div>
+                        <div class="modal-footer border-0">
+                            <button type="button" class="btn btn-danger" data-mdb-dismiss="modal">No</button>
+                            <button type="button" class="btn btn-primary" @click.prevent ="deleteAccount">Yes</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- ErrorModal -->
+                    <div class="modal fade" 
+                        id="ErrorModal" 
+                        tabindex="-1" 
+                        aria-labelledby="ErrorModal" 
+                        aria-hidden="true"
+                        style="width: 100%"
+                        >
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-body">
+                            {{ modalMessage }}
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    
                 <div style="height: 300px"></div>
         </div>
          <Footer />
@@ -61,6 +94,7 @@ import Header from "../components/header.vue"
 import Footer from "../components/footer.vue"
 import { urls } from '../helper'
 
+
 export default {
     name: 'List',
     components: {
@@ -70,9 +104,7 @@ export default {
     data(){
         return {
             contents : [],
-            page: 1,
-            next_value: false,
-            previous_value: false,
+            modalMessage: "",
             errShow: {
                 noContent: false
             }
@@ -96,18 +128,24 @@ export default {
         readLetter(blog_id){
             this.$router.push(`/view/${blog_id}`)
         },
-        async handleDeleteMe(){
-            if (confirm("Are you sure want to delete you here? You can continue as a guest. Create a new user to write letters")) {
-                let deleteUrl = urls().VIM_BASE + urls().VIM_APP + urls().DELETE
-                const response = await axios.delete(deleteUrl)
-                this.$store.dispatch('changeUserState', null);
-            }
+        handleDeleteMe(){
+            this.modalMessage = "Are you sure to delete the account ? This action will permanently delete all the records related to you."
+            let myModal = new mdb.Modal(document.getElementById('ConfirmModal'))
+            myModal.show();
+        },
+        async deleteAccount(){
+            let deleteUserUrl = urls().VIM_BASE + urls().VIM_APP + urls().DELETE
+            const userDeleteResponse = await axios.delete(deleteUserUrl)
+            let deleteLUrl = urls().CORE_BASE + urls().CORE_APP + urls().DELETE
+            const lettersDeleteResponse = await axios.delete(deleteLUrl)
+            this.$store.dispatch('changeUserState', null);
+            this.$router.push('/').then(res => this.$router.go())
         },
         async handleDelete(blog_id){
             if (confirm("Are you sure ? You can upload a new one if you want to.")) {
                 let deleteUrl = urls().CORE_BASE + urls().CORE_APP + urls().DELETE
                 const response = await axios.delete(deleteUrl, {
-                data:   {
+                data:   {   
                 blog_id : blog_id
                     }
                 })

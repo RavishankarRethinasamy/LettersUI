@@ -118,10 +118,11 @@
                                             type="text" 
                                             id="lEid" 
                                             v-model="email" 
-                                            class="form-control active" 
+                                            class="form-control" 
+                                            autocomplete="off"
                                             @click="errShow.emailNull = errShow.login = false"
                                              />
-                                        <label class="form-label active" for="lEid">Username / Email</label>
+                                        <label class="form-label" for="lEid">Username / Email</label>
                                         </div>
                                         <cite v-if="errShow.emailNull" class="error fs-6">username or email should be given</cite>
                                     
@@ -131,7 +132,8 @@
                                             type="password" 
                                             id="lpwd" 
                                             v-model="password"
-                                            class="form-control active" 
+                                            class="form-control"
+                                            autocomplete="off"
                                             @click.prevent ="errShow.passNull = errShow.login = false"
                                             />
                                         <label class="form-label active" for="lpwd">Password</label>
@@ -142,7 +144,10 @@
                                         <div class="col d-flex justify-content-center">
                                             <!-- Checkbox -->
                                             <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" checked v-model="remember" id="lrme" />
+                                            <input class="form-check-input" 
+                                                type="checkbox" 
+                                                checked 
+                                                v-model="remember" id="lrme" />
                                             <label class="form-check-label" for="lrme"> Remember me </label>
                                             </div>
                                         </div>
@@ -215,8 +220,9 @@
                                     v-model="username" 
                                     id="spuname"
                                     @click.prevent ="errShow.userNull = false"
+                                    autocomplete="off"
                                     class="form-control"/>
-                                <label class="form-label active" for="spuname">User name</label>
+                                <label class="form-label" for="spuname">User name</label>
                                 </div>
                                 <cite v-if="errShow.userNull" class="error fs-6">username should not be empty </cite>
 
@@ -225,9 +231,10 @@
                                     type="email" 
                                     v-model="email" 
                                     id="speid"
-                                    @click.prevent ="errShow.emailNull =  errShow.emailRegex = false" 
+                                    @click.prevent ="errShow.emailNull =  errShow.emailRegex = false"
+                                    autocomplete="off"
                                     class="form-control"/>
-                                <label class="form-label active" for="speid">Email address</label>
+                                <label class="form-label" for="speid">Email address</label>
                                 </div>
                                 <cite v-if="errShow.emailNull" class="error fs-6">email should not be empty </cite>
                                 <cite v-if="errShow.emailRegex" class="error fs-6">email is not valid</cite>
@@ -238,8 +245,9 @@
                                     v-model="password" 
                                     id="spwd" 
                                     @click.prevent ="errShow.passNull = errShow.passRegex = false"
+                                    autocomplete="off"
                                     class="form-control"/>
-                                <label class="form-label active" for="spwd">Password</label>
+                                <label class="form-label" for="spwd">Password</label>
                                 </div>
                                 <cite v-if="errShow.passNull" class="error fs-6">password should not be empty </cite>
                                 <cite v-if="errShow.passRegex" class="error fs-6">password is not valid. Use atleast 8 chars 
@@ -252,8 +260,9 @@
                                     v-model="rPassword" 
                                     id="srpwd" 
                                     @click.prevent ="errShow.rpassNull = errShow.passMismatch = false"
+                                    autocomplete="off"
                                     class="form-control"/>
-                                <label class="form-label active" for="spwd">Repeat password</label>
+                                <label class="form-label" for="spwd">Repeat password</label>
                                 </div>
                                 <cite v-if="errShow.rpassNull" class="error fs-6">Repeat password should not be empty </cite>
                                 <cite v-if="errShow.passMismatch" class="error fs-6">Password not matched. check again </cite>
@@ -288,10 +297,11 @@
                                         <div class="form-outline mb-4">
                                         <input type="email" id="fpeid" 
                                         v-model="forgotEmail" 
-                                        class="form-control" 
+                                        class="form-control"
+                                        autocomplete="off"
                                         @click.prevent ="femailNull= false"
                                         />
-                                        <label class="form-label active" for="fpeid">Email address</label>
+                                        <label class="form-label" for="fpeid">Email address</label>
                                         </div>
                                         <cite v-if="errShow.femailNull" class="error fs-6">email should not be empty </cite>
                                         <!-- Submit button -->
@@ -305,7 +315,12 @@
                                     </div>
 
                                     <div v-if="otpSent" class="form-outline mb-4">
-                                    <input type="text" id="fpeid" v-model="otp" class="form-control" />
+                                    <input 
+                                        type="text"
+                                        id="fpeid"
+                                        v-model="otp"
+                                        autocomplete="off"
+                                        class="form-control" />
                                     <label class="form-label" for="otp">Enter OTP</label>
                                     <button v-if="!spinner.otpValidator" type="submit" class="btn btn-primary btn-block mb-4 my-3" @click.prevent ="handleOTP">Submit</button>
                                     <div v-if="spinner.otpValidator" class="d-flex justify-content-center">
@@ -326,6 +341,7 @@
                                              v-model="password" 
                                              id="spwd" 
                                              class="form-control"
+                                             autocomplete="off"
                                             @click.prevent ="errShow.resetpassMismatch = false" />
                                             <label class="form-label" 
                                             for="spwd">New Password</label>
@@ -336,6 +352,7 @@
                                             <input type="password" 
                                             v-model="rPassword" 
                                             id="srpwd" 
+                                            autocomplete="off"
                                             @click.prevent ="errShow.resetpassMismatch = false"
                                             class="form-control" />
                                             <label class="form-label" 
@@ -420,7 +437,8 @@ export default {
             this.$router.push('/')
         },
         async handleLogin() {
-            if(!this.email){
+            try{
+                if(!this.email){
                 this.errShow.emailNull = true
                 return
             }
@@ -435,6 +453,7 @@ export default {
             user_name : this.email,
             password : this.password
           })
+          console.log(response)
           if(response.data.status === "error"){
               this.spinner.login = 0
               this.errShow.login = response.data.message 
@@ -450,16 +469,11 @@ export default {
               this.$store.dispatch('changeUserState', response.data.token)
               this.$router.go('/')
           }
-      },
-        async handleGithub(){
-            try{
-                let gitAuthUrl = urls().VIM_BASE + urls().GITHUB_LOGIN
-                const response = await axios.get(gitAuthUrl)
             }
             catch(e){
 
             }
-        },
+      },
         async handleRegiser(){
             try{
                 let emailRegex = /^\S+@\S+\.\S+$/
@@ -500,6 +514,7 @@ export default {
                     this.errShow.register = response.data.message
                 }
                 else if(response.data.status === "success"){
+                    this.username = this.password = this.email = ""
                     this.succShow.register = response.data.message
                 }
             } 
