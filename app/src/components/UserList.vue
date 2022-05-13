@@ -10,20 +10,10 @@
                                 <div id="userHelp" class="text-dark">
                                     <ol class="my-2">
                                         <li>
-                                            Monetization details for writing the letters will be released in the upcoming version (v2.0) Release date: TBD
+                                            Monetizing the letters will be released in the upcoming version (v2.0) Release date: TBD
                                         </li>
-
                                         <li>
-                                            Get atleast 25 pays for each letters. There will be minumum required pays
-                                            for an letter to be eligible for monetization. Be good at the quality of the content.
-                                        </li>
-
-                                        <li>
-                                            Each letter analytics regarding the pays, generated money will be given
-                                        </li>
-
-                                        <li>
-                                            What If I don't get pays ? Still, You will be getting money based on the views. Again detail in v2.0
+                                            What If I don't get pays ? Still, monetization can be applied based on the views. Again detail in v2.0
                                         </li>
                                     </ol>
                                 </div>
@@ -34,7 +24,7 @@
                             <div v-for="con in contents" :key="con.blog_id">
                                 <div class="card border">
                                     <div class="card-body">
-                                        <a class="card-title text-dark fs-6" style="width: 60%" @click="readLetter(con.blog_id)" href="">{{ con.display_name }}</a>
+                                        <a class="card-title text-dark fs-6" style="width: 60%" @click="readLetter(con.blog_id, con.name)" href="">{{ con.display_name }}</a>
                                         <a href=""  class="float-end mx-3 text-muted" @click.prevent ="handleDelete(con.blog_id)"><i class="fas fa-trash"></i></a>
                                         <p class="card-text text-muted my-3" style="width: 60%">{{ con.description }}</p>
                                     </div>
@@ -105,6 +95,7 @@ export default {
         return {
             contents : [],
             modalMessage: "",
+            page:  parseInt(this.$route.params.page) || 1,
             errShow: {
                 noContent: false
             }
@@ -125,8 +116,9 @@ export default {
     },
 
     methods: {
-        readLetter(blog_id){
-            this.$router.push(`/view/${blog_id}`)
+        readLetter(blog_id, name){
+            sessionStorage.setItem('blog_id', blog_id);
+            this.$router.push(`/${name.replaceAll(" ", "-")}`)
         },
         handleDeleteMe(){
             this.modalMessage = "Are you sure to delete the account ? This action will permanently delete all the records related to you."
@@ -142,7 +134,7 @@ export default {
             this.$router.push('/').then(res => this.$router.go())
         },
         async handleDelete(blog_id){
-            if (confirm("Are you sure ? You can upload a new one if you want to.")) {
+            if (confirm("Are you sure ? ")) {
                 let deleteUrl = urls().CORE_BASE + urls().CORE_APP + urls().DELETE
                 const response = await axios.delete(deleteUrl, {
                 data:   {   
@@ -151,11 +143,26 @@ export default {
                 })
                 this.$router.go(this.$router.currentRoute)
             }
-        }
+        },
     },
 }
 </script>
 
 <style>
+
+
+.VuePagination{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.VuePagination__pagination{
+    justify-content: center;
+    align-items: center;
+}
+
+.VuePagination__count{
+    text-align: center;
+}
 
 </style>

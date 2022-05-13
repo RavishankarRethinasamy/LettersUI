@@ -4,8 +4,8 @@ export function urls(){
     return {
         CORE_BASE: "http://localhost:19091",
         VIM_BASE : "http://localhost:19092",
-        VIM_APP : "/fcs/letters/v1/user",
-        CORE_APP : "/fcs/letters/v1/blog",
+        VIM_APP : "/v1/user",
+        CORE_APP : "/v1/blog",
         LIST : "/list",
         READ : "/read",
         UPDATE : "/update",

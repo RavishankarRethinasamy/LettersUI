@@ -113,7 +113,7 @@ export default{
                     return
                 }
                 else if (value.length == 1){
-                    let content = value[0].insert.replace("\n", "")
+                    let content = value[0].insert.replaceAll("\n", "")
                     if(!content){
                         this.errShow.contentNull = true
                         return
@@ -128,7 +128,9 @@ export default{
                                 })
                 if ( response.data.status === "success"){
                     this.spinner = 0
-                    this.$router.push(`/view/${response.data.blog_id}`).then(res => this.$router.go())
+                    let blog_name = response.data.blog_name
+                    sessionStorage.setItem('blog_id', response.data.blog_id);
+                    this.$router.push(`/${blog_name.replaceAll(" ", "-")}`).then(res => this.$router.go())
                 }
             }catch(err){
                 alert(err)

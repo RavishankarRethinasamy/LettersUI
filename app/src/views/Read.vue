@@ -105,8 +105,9 @@ export default {
         }
     },
     beforeMount(){
+        console.log(this.$route.params)
         let readBlogUrl = urls().CORE_BASE + urls().CORE_APP + urls().GLOBAL_READ
-        + "?blog_id=" + this.$route.params.id
+        + "?blog_id=" + sessionStorage.getItem('blog_id')
         axios.get(readBlogUrl).then(response => (this.contents = response.data))
     },
     methods: {

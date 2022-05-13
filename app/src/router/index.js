@@ -12,32 +12,32 @@ const routes = [
     component: List
   },
   {
-    path: '/search/:searchValue',
+    path: '/p/:page',
+    name: 'PagedList',
+    component: List
+  },
+  {
+    path: '/s/:searchValue',
     name: 'SearchedList',
     component: List
   },
   {
-    path: '/page/:pageValue',
-    name: 'PaginatedList',
-    component: List
-  },
-  {
-    path: '/mylist',
+    path: '/ml',
     name: 'MyList',
     component: UserList
   },
   {
-    path: '/mylist/search/:searchValue',
+    path: '/mlp/:page',
+    name: 'PagedMyList',
+    component: UserList
+  },
+  {
+    path: '/mls/:searchValue',
     name: 'SearchedMyList',
     component: UserList
   },
   {
-    path: '/mylist/page/:pageValue',
-    name: 'PaginatedMyList',
-    component: UserList
-  },
-  {
-    path: '/view/:id',
+    path: '/:id',
     name: 'Read',
     component: Read
   },

@@ -28,15 +28,21 @@
       </div>
       <div class="row">
         <div class="col-8">
+            <div v-if="loadSpinner" class="d-flex justify-content-center">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
           <div v-for="con in contents.data" :key="con.blog_id">
             <div class="card border-0">
               <div class="card-body">
                 <a
                   class="card-title text-dark fs-5"
-                  @click="readLetter(con.blog_id)"
+                  @click="readLetter(con.blog_id, con.name)"
                   href=""
                   >{{ con.display_name }}
                 </a>
+                <p class="fs-8 text-muted"> {{ con.description }} </p>
                 <figure>
                   <figcaption class="blockquote-footer my-3">
                     <cite>
@@ -56,6 +62,8 @@
             </div>
           </div>
 
+           <pagination v-model="page" :records="contents.total" :per-page="10" @paginate="handlePaginate"/>
+
           <div
             v-if="Err.noContent"
             id="userHelp"
@@ -69,7 +77,7 @@
         <div class="col-5"></div>
       </div>
     </div>
-    <div style="height: 300px"></div>
+    <div style="height: 400px"></div>
     <Footer />
   </div>
 </template>
@@ -79,6 +87,7 @@
 import axios from 'axios'
 import Header from "../components/header.vue"
 import Footer from "../components/footer.vue"
+import Pagination from 'v-pagination-3';
 import { urls } from '../helper'
 
 
@@ -86,12 +95,15 @@ export default {
     name: 'List',
     components: {
         Header,
-        Footer
+        Footer,
+        Pagination
     },
     data(){
         return {
             contents : [],
             showBanner: false,
+            page:  parseInt(this.$route.params.page) || 1,
+            loadSpinner: true,
             Err : {
                 noContent: ""
             }
@@ -105,6 +117,9 @@ export default {
         if ("searchValue" in this.$route.params){
             listBlogsUrl += `?search=${this.$route.params.searchValue}`
         }
+        else if ("page" in this.$route.params){
+            listBlogsUrl += `?page=${this.$route.params.page}`
+        }
         const response = await axios.get(listBlogsUrl)
         if (response.data.data.length > 0){
             this.contents = response.data
@@ -112,12 +127,17 @@ export default {
         else{
             this.Err.noContent = 1
         }
+        this.loadSpinner = false
         }
         catch(e){}
     },
     methods: {
-        readLetter(blog_id){
-            this.$router.push(`/view/${blog_id}`)
+        readLetter(blog_id, name){
+            sessionStorage.setItem('blog_id', blog_id);
+            this.$router.push(`/${name.replaceAll(" ", "-")}`)
+        },
+        handlePaginate(e){
+            this.$router.push(`/p/${e}`).then(res => this.$router.go())
         }
     }
 }
@@ -127,4 +147,19 @@ export default {
 .img-fluid {
   width: 100%;
 }
+
+.VuePagination{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.VuePagination__pagination{
+    justify-content: center;
+    align-items: center;
+}
+
+.VuePagination__count{
+    text-align: center;
+}
+
 </style>

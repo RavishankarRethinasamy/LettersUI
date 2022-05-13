@@ -6,7 +6,7 @@
 <footer class="text-center text-lg-start bg-light text-muted">
   <!-- Section: Social media -->
              <section class="mb-4 text-center">
-      <!-- Facebook -->
+
       <a
         class="btn btn-link btn-floating btn-lg text-dark m-1"
         href="#!"
@@ -14,8 +14,6 @@
         data-mdb-ripple-color="dark"
         ><i class="fab fa-facebook-f"></i
       ></a>
-
-      <!-- Twitter -->
       <a
         class="btn btn-link btn-floating btn-lg text-dark m-1"
         href="#!"
@@ -24,8 +22,6 @@
         ><i class="fab fa-twitter"></i
       ></a>
 
-
-      <!-- Instagram -->
       <a
         class="btn btn-link btn-floating btn-lg text-dark m-1"
         href="#!"
@@ -34,7 +30,6 @@
         ><i class="fab fa-instagram"></i
       ></a>
 
-      <!-- Linkedin -->
       <a
         class="btn btn-link btn-floating btn-lg text-dark m-1"
         href="#!"
@@ -43,7 +38,6 @@
         ><i class="fab fa-linkedin"></i
       ></a>
 
-       <!-- Youtube -->
       <a
         class="btn btn-link btn-floating btn-lg text-dark m-1"
         href="#!"

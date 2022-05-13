@@ -66,7 +66,7 @@
                                 Hello, {{ isUserLogged.username }}
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li><a class="dropdown-item" href="/mylist">My profile</a></li>
+                                <li><a class="dropdown-item" href="/ml">My profile</a></li>
                                 <li><a class="dropdown-item" href="/" @click.prevent ="handleLogOut">Log out</a></li>
                             </ul>
                         </div>
@@ -526,7 +526,7 @@ export default {
             if(!this.searchValue){
                 return
             }
-            this.$router.push(`/search/${this.searchValue}`).then(res => this.$router.go())
+            this.$router.push(`/s/${this.searchValue}`).then(res => this.$router.go())
         },
         async handleForgotPassword(){
             if (!this.forgotEmail){
