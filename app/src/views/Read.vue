@@ -43,6 +43,8 @@
           <cite v-if="errShow.contentNull" class="error fs-6"
             >Write something...</cite
           >
+          <p><cite class="text-muted fs-6">Sign in before answer to get the pays to your account or you will be answering as a
+              guest leads to pay loss <a href="/details">Learn more</a></cite></p>
 
           <div
             style="margin-top: 80px"
@@ -63,12 +65,27 @@
                     v-if="contents.type !== 'story'"
                     href=""
                     style="color: blue"
+                    @click.prevent ="handleCommentPay"
                     >pay</a
                   >
+                  <!-- <a class="mx-2"
+                    style="color: blue"
+                    data-mdb-toggle="collapse"
+                    href="#replyEditor"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="collapseExample"
+                    @click.prevent="commentId = comment.id"
+                    >reply</a
+                  >
+
+                  <div class="collapse" id="replyEditor">
+                    <Editor @onPost="handleCommentreply" />
+                  </div> -->
+
                 </cite>
               </figcaption>
             </figure>
-            <hr />
           </div>
         </div>
       </div>
@@ -99,16 +116,22 @@ export default {
             contents: [],
             commentValue: "",
             pays: 0,
+            commentId: "",
             errShow: {
                 contentNull: false
             }
         }
     },
-    beforeMount(){
-        console.log(this.$route.params)
+    async beforeMount(){
         let readBlogUrl = urls().CORE_BASE + urls().CORE_APP + urls().GLOBAL_READ
-        + "?blog_id=" + sessionStorage.getItem('blog_id')
-        axios.get(readBlogUrl).then(response => (this.contents = response.data))
+        + "?blog_id=" + this.$route.params.id
+        const response = await axios.get(readBlogUrl)
+        if (response.data.status == "success"){
+            this.contents = response.data.data
+        }
+        else{
+            alert(response.data.message)
+        }
     },
     methods: {
         JsonToHtml(data){
@@ -116,8 +139,15 @@ export default {
             let converter = new QuillDeltaToHtmlConverter(data, cfg);
             return converter.convert();
         },
-        viewUrl(blogId){
-            return "/view/" + blogId
+        async handleCommentreply(value){
+            const response = await axios.put(urls().CORE_BASE + urls().CORE_APP + urls().GLOBAL_UPDATE,
+            {
+                "blog_id": this.$route.params.id,
+                "comment_id": this.commentId,
+                "reply": value,
+                "type": "comment_reply"
+            })
+            this.$router.go(this.$router.currentRoute)
         },
         async handlePay(){
             const response = await axios.put(urls().CORE_BASE + urls().CORE_APP + urls().GLOBAL_UPDATE,
@@ -129,7 +159,7 @@ export default {
         },
         async handleComment(value){
             if (value.length == 1){
-                    let content = value[0].insert.replace("\n", "")
+                    let content = value[0].insert.replaceAll("\n", "")
                     if(!content){
                         this.errShow.contentNull = true
                         return
@@ -153,6 +183,11 @@ export default {
             }
         }
     },
+    computed: {
+        isUserLogged(){
+            return this.$store.getters.stateValue.user
+        }
+    }
 }
 </script>
 

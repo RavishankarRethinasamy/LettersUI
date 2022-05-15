@@ -74,6 +74,7 @@
             Links
           </h6>
           <p><a class="text-reset" href="/team">Developer</a></p>
+          <p><a class="text-reset" href="/details">FAQ</a></p>
           <!-- <p><i class="fas fa-phone me-3"></i></p> -->
         </div>
        

@@ -538,7 +538,6 @@ export default {
             const response = await axios.post(forgotPwd, {
                 "email": this.forgotEmail
             })
-            console.log(response)
             if (response.data.status == "success"){
                 this.spinner.getOTP = 0
                 this.showForgot = false

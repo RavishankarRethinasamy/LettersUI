@@ -15,6 +15,10 @@
                                         <li>
                                             What If I don't get pays ? Still, monetization can be applied based on the views. Again detail in v2.0
                                         </li>
+                                        <li>
+                                            Stay lettering...!
+                                        </li>
+                                        <p style="color: blue"><a class="text-reset" href="/details">Learn more</a></p>
                                     </ol>
                                 </div>
                             </div>
@@ -32,7 +36,7 @@
                             </div>
 
                             <div v-if="errShow.noContent" id="userHelp" class="text-dark fs-6" >
-                                No personal letters available. Want to raise a question or write a story
+                                No personal letters available. Wanna write some..
                                 <p><a href="/write" class="btn btn-primary">Write</a></p>
                             </div>
                     </div>
@@ -149,20 +153,5 @@ export default {
 </script>
 
 <style>
-
-
-.VuePagination{
-    margin-top: 2%;
-    margin-bottom: 2%;
-}
-
-.VuePagination__pagination{
-    justify-content: center;
-    align-items: center;
-}
-
-.VuePagination__count{
-    text-align: center;
-}
 
 </style>

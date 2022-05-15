@@ -4,6 +4,7 @@ import Read from "../views/Read.vue"
 import Write from "../components/Write.vue"
 import UserList from "../components/UserList.vue"
 import Team from "../components/Team.vue"
+import Details from "../components/Details.vue"
 
 const routes = [
   {
@@ -50,6 +51,11 @@ const routes = [
     path: '/team',
     name: 'Team',
     component: Team
+  },
+  {
+    path: '/details',
+    name: 'Details',
+    component: Details
   }
 ]
 

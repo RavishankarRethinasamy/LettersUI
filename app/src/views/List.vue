@@ -38,7 +38,7 @@
               <div class="card-body">
                 <a
                   class="card-title text-dark fs-5"
-                  @click="readLetter(con.blog_id, con.name)"
+                  @click="readLetter(con.blog_id)"
                   href=""
                   >{{ con.display_name }}
                 </a>
@@ -52,25 +52,31 @@
                         <span class="mx-1 fs-6">{{ con.created_by  }} </span>
                         at <span class="mx-1">{{ con.created_at }}</span>
                       </span>
-                      <span class="mx-2" style="color: blue">
+                      <span v-if="con.type == 'story'" class="mx-2" style="color: blue">
                         {{ con.pays }} pays
                       </span>
+                      <a v-if="con.type == 'question'" 
+                        class="mx-2"
+                        @click="readLetter(con.blog_id)"
+                        href="#"
+                        style="color: blue">
+                        write answer
+                      </a>
+
                     </cite>
                   </figcaption>
                 </figure>
               </div>
             </div>
           </div>
-
            <pagination v-model="page" :records="contents.total" :per-page="10" @paginate="handlePaginate"/>
-
           <div
             v-if="Err.noContent"
             id="userHelp"
             class="text-dark fs-4"
             style="margin-top: 10px"
           >
-            No Letters available. Want to raise a question or write a story
+            No Letters available. Wanna write some...
             <p><a href="/write" class="btn btn-primary">Write</a></p>
           </div>
         </div>
@@ -132,9 +138,8 @@ export default {
         catch(e){}
     },
     methods: {
-        readLetter(blog_id, name){
-            sessionStorage.setItem('blog_id', blog_id);
-            this.$router.push(`/${name.replaceAll(" ", "-")}`)
+        readLetter(blog_id){
+            this.$router.push(`/${blog_id}`)
         },
         handlePaginate(e){
             this.$router.push(`/p/${e}`).then(res => this.$router.go())

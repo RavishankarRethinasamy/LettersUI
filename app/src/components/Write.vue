@@ -128,9 +128,7 @@ export default{
                                 })
                 if ( response.data.status === "success"){
                     this.spinner = 0
-                    let blog_name = response.data.blog_name
-                    sessionStorage.setItem('blog_id', response.data.blog_id);
-                    this.$router.push(`/${blog_name.replaceAll(" ", "-")}`).then(res => this.$router.go())
+                    this.$router.push(`/${ response.data.blog_id}`).then(res => this.$router.go())
                 }
             }catch(err){
                 alert(err)
