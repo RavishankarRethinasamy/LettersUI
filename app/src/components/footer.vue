@@ -101,9 +101,12 @@
 
   <!-- Copyright -->
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-    © 2022 Copyright:
-    <a class="text-reset fw-bold mx-auto" href="/">theletters.in</a>
+    Letters @2022
+    <!-- <a class="text-reset fw-bold mx-auto" href="/">theletters.in</a> -->
     <span class="mx-2">v1.1</span>
+    <a href="" class="mx-2" style="color: grey">Privacy policy</a>
+    <a href="" class="mx-2" style="color: grey">Terms of service</a>
+    <a href="" class="mx-2" style="color: grey">Disclaimer</a>
   </div>
   
   <!-- Copyright -->

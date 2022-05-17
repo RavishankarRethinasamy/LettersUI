@@ -598,19 +598,4 @@ export default {
 </script>
 
 <style>
-
-.logo{
-    height: 40px;
-    width: 40px;
-}
-
-
-.navbar-brand{
-    font-family: monospace;
-}
-
-.error{
-    color: red;
-}
-
 </style>

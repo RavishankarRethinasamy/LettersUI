@@ -25,16 +25,16 @@
             <button
               type="button"
               class="btn btn-primary btn-sm"
-              @click.prevent="handlePay"
+              @click.prevent="handlePay('blog')"
             >
               pay
             </button>
+
             <span class="mx-2">{{ contents.updates.pays }}</span>
             <div id="userHelp" class="form-text">
-              By watching an Ad video, you are paying the user for this content.
-              If you found this content worth, do pay and feel good that you
-              paid. You can pay any number of times if you found the user
-              deserve to be paid for the content.
+              By clicking pay, you are increasing the ads share value to the writer.
+              If you found this content worth, do register and pay and feel good that you
+              paid. <a href="/details">Learn more</a>
             </div>
           </div>
 
@@ -43,8 +43,12 @@
           <cite v-if="errShow.contentNull" class="error fs-6"
             >Write something...</cite
           >
-          <p><cite class="text-muted fs-6">Sign in before answer to get the pays to your account or you will be answering as a
-              guest leads to pay loss <a href="/details">Learn more</a></cite></p>
+          <p v-if="contents.type !== 'story'">
+              <cite class="text-muted fs-6">
+                  Sign in before writing the answer to get the pay option to increase the share value of ads.
+                  <a href="/details">Learn more</a>
+              </cite>
+          </p>
 
           <div
             style="margin-top: 80px"
@@ -65,7 +69,7 @@
                     v-if="contents.type !== 'story'"
                     href=""
                     style="color: blue"
-                    @click.prevent ="handleCommentPay"
+                    @click.prevent ="handlePay(comment.id)"
                     >pay</a
                   >
                   <!-- <a class="mx-2"
@@ -149,13 +153,27 @@ export default {
             })
             this.$router.go(this.$router.currentRoute)
         },
-        async handlePay(){
-            const response = await axios.put(urls().CORE_BASE + urls().CORE_APP + urls().GLOBAL_UPDATE,
-            {
-                "blog_id": this.$route.params.id,
-                "type": "pay"
-            })
-            this.$router.go(this.$router.currentRoute)
+        async handlePay(value){
+            if(!this.isUserLogged){
+                alert("Sign in required to pay")
+                return
+            }
+            else{
+                let payReq = {
+                    "blog_id": this.$route.params.id,
+                    'type': "pay"
+                }
+                if(value !== 'blog'){
+                    payReq["comment_id"] = value
+                }
+                const response = await axios.put(urls().CORE_BASE + urls().CORE_APP + urls().UPDATE, payReq)
+                    if (response.data.status == "success"){
+                        this.$router.go(this.$router.currentRoute)
+                    }else
+                    {
+                        alert(response.data.message)
+                    }
+            }
         },
         async handleComment(value){
             if (value.length == 1){
@@ -192,16 +210,5 @@ export default {
 </script>
 
 <style>
-pre {
-  background-color: rgb(93, 88, 133);
-  color: white;
-}
 
-.ql-align-right {
-  text-align: right;
-}
-
-.ql-align-center {
-  text-align: center;
-}
 </style>

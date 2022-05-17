@@ -8,8 +8,7 @@
             <ul>
                 <li>
                     Letters is a yet another content sharing platform where people can write stories and asking questions
-                    about anything and everything from techinical to non techinical, from parenting to politics, from cinema
-                    to sports, from A to Z..
+                    about anything and everything from A to Z..Strictly follow the <a href="#">Terms of service</a>.
                 </li>
             </ul>
         </div>
@@ -18,22 +17,14 @@
             <h5>How it works ?</h5>
             <ul>
                 <li>
-                    People who write stories will get
+                    People who write stories or write answers will get
                     <ol>
                         <li>
-                            Google Ads be placed
+                            the base share of 70% from the revenue generated through ads.
                         </li>
                         <li>
-                             A pay option to let the readers pay the writer.   
-                        </li>
-                    </ol>
-                </li>
-                <li>
-                    People who raise questions don't get pay option but
-                    <ol>
-                        <li>
-                            Those who answer the questions will get the option instead. So that quesioner can pay or the others
-                            who wants to.
+                             If people pays to you, based on the amount of pays the base share value will increase and it could 
+                             reach the max share of 98%.
                         </li>
                     </ol>
                 </li>
@@ -44,8 +35,7 @@
         <div id="mbr">
             <h5>Do we need to create a account ?</h5>
             <ul>
-                Yes. A member account is required to write stories and questions. And also you can read and pay as a guest.
-                And answer the question as a member not as a guest or you will end up losing the pays.
+                Yes. A member account is required to write stories and questions.
             </ul>
         </div>
 
@@ -53,18 +43,14 @@
             <h5>What is a Pay option ?</h5>
             <ul>
                 <li>
-                    On clicking the pay option, a google recaptcha will be shown to avoid bots. After that, 
-                    direct video ad will be requested to google and played.
+                    Pay is alternative to like where user click to increase the payment of the writers and answer providers.
                 </li>
                 <li>
-                    Ad at the hands of user request. We believe that the story or answers
-                    deserve to be paid will get paid.
+                    Base share of 70% will be given based on the views. If the pays increases, the share value will increase.
+                    Detailed analysis of variable shares will be released in v2.0.
                 </li>
                 <li>
-                    Also the reader or questioner will get the satisfaction of paying.
-                </li>
-                <li>
-                    Payment through time.
+                    Do we need to sign in to pay ? Yes. To avoid mulitple pays from same account, sign in required.
                 </li>
             </ul>
         </div>
@@ -92,7 +78,8 @@
             <ul>
                 <li>
                     V2.0 will be the major and the complete monetized version. It will be released after v1.2. 
-                    More details will be updated regarding payments.
+                    More details will be updated regarding pays, shares and payments. Withdraw money support also will
+                    be included.
                 </li>
             </ul>
         </div>

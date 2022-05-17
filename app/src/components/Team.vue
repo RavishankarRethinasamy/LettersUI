@@ -69,7 +69,7 @@
                         SDLC, Agile
                     </li>
                     <li>
-                        OAuth and using external APIs.Well,  AWS SES used for mail service. Will implement OAuth in Letters v1.2.
+                        OAuth and using external APIs. Well,  AWS SES used for mail service. Will implement OAuth in Letters v1.2.
                     </li>
                     <li>
                         And various things in this journey
@@ -78,10 +78,6 @@
 
                 <P><b>Note</b></P>
                     <ol>
-                        <li>
-                            I am not an expert in any of the things mentioned above but have a
-                            good understanding. Will study and build together.
-                        </li>
                         <li>
                             Our focus is to work on Letters and learn. Will further work into future ideas.
                         </li>

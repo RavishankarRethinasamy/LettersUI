@@ -55,8 +55,11 @@
                       <span v-if="con.type == 'story'" class="mx-2" style="color: blue">
                         {{ con.pays }} pays
                       </span>
+                      <span v-if="con.type == 'story'">
+                          {{ readTime()  }}
+                      </span>
                       <a v-if="con.type == 'question'" 
-                        class="mx-2"
+                        class="mx-2"    
                         @click="readLetter(con.blog_id)"
                         href="#"
                         style="color: blue">
@@ -143,28 +146,14 @@ export default {
         },
         handlePaginate(e){
             this.$router.push(`/p/${e}`).then(res => this.$router.go())
+        },
+        readTime(){
+            return '5 min read'
         }
-    }
+    },
 }
 </script>
 
 <style>
-.img-fluid {
-  width: 100%;
-}
-
-.VuePagination{
-    margin-top: 2%;
-    margin-bottom: 2%;
-}
-
-.VuePagination__pagination{
-    justify-content: center;
-    align-items: center;
-}
-
-.VuePagination__count{
-    text-align: center;
-}
 
 </style>

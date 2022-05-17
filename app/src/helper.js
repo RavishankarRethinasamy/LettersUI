@@ -20,7 +20,7 @@ export function urls(){
         GLOBAL_CREATE : "/global_create",
         FORGOT_PASSWORD : "/forgot_password",
         RESET_PASSWORD : "/reset_password",
-        GITHUB_LOGIN: "/github"
+        RECAPTCHA: "/recaptcha"
 
     }
 }
