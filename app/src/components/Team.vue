@@ -4,18 +4,37 @@
     <Header />
 
         <div class="container" style="margin-top: 8%">
-                <h3>Ravishankar Rethinasamy</h3>
-                <figcaption class="blockquote-footer my-3">
-                    <cite>
-                        Full stack developer, Founder
-                    </cite>
-                </figcaption>
+                <div>
+                    <h3>Ravishankar Rethinasamy</h3>
+                    <figcaption class="blockquote-footer my-3">
+                        <cite>
+                            Full stack developer, Founder
+                        </cite>
+                    </figcaption>
 
-                Have morethan 3 years of experiance in this field. Holds 
-                Bachelor of Engineering in Electronics and Instrumentation from Valliammai Engineering College, 
-                Chennai, TamilNadu. Grateful that started this journey with 
-                <a href="https://www.corestack.io/" target="blank">Corestack</a>
-                <br><br>                
+                    Have morethan 3 years of experiance in this field. Holds 
+                    Bachelor of Engineering in Electronics and Instrumentation from SRM Valliammai, 
+                    Chennai, TamilNadu. Grateful that started this journey with 
+                    <a href="https://www.intellectdesign.com/" target="blank">Intellect Design Arena</a>
+                    and 
+                    <a href="https://www.corestack.io/" target="blank">Corestack</a>
+                </div>
+
+                <div style="margin-top: 8%">
+                    <h3>karthi Rajasekaran</h3>
+                    <figcaption class="blockquote-footer my-3">
+                        <cite>
+                            Java developer, Advisor
+                        </cite>
+                    </figcaption>
+
+                    Have 4 years of experiance in this field. Holds 
+                    Bachelor of Engineering in Electronics and Communications from Sri Venkateswara, 
+                    Chennai, TamilNadu. Working as a software developer in 
+                    <a href="https://www.intellectdesign.com/" target="blank">Intellect Design Arena</a>
+                </div>
+                
+                <!-- <br><br>                
                 Have used various tecnologies like Material Design Boostrap, Vue Js, Flask, MongoDb, AWS to build Letters.
                 Hoping to implement more knowledge into it to take it next level.
 
@@ -96,7 +115,7 @@
                 <b>Place: Chennai</b>
 
                 <p>Apply only if you are really interested. Fun guaranteed though.
-                </p>
+                </p> -->
         </div>
         <div style="height: 300px"></div>
     <Footer />

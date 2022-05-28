@@ -17,16 +17,8 @@
             <h5>How it works ?</h5>
             <ul>
                 <li>
-                    People who write stories or write answers will get
-                    <ol>
-                        <li>
-                            the base share of 70% from the revenue generated through ads.
-                        </li>
-                        <li>
-                             If people pays to you, based on the amount of pays the base share value will increase and it could 
-                             reach the max share of 98%.
-                        </li>
-                    </ol>
+                    People who write stories or write answers will get the pay option so that the readers and questioners to pay them. Based on the number of pays, the 
+                            revenue generated from ads will be shared to the respective writer.
                 </li>
             </ul>
         </div>
@@ -43,14 +35,15 @@
             <h5>What is a Pay option ?</h5>
             <ul>
                 <li>
-                    Pay is alternative to like where user click to increase the payment of the writers and answer providers.
+                    Pay is alternative to like where user click to enable the payment to the writers and answer providers.
                 </li>
                 <li>
-                    Base share of 70% will be given based on the views. If the pays increases, the share value will increase.
+                    Pays enables the user content to be monetized. If the pays increases, the share value increases. It 
+                    starts from 70% when the pays reaches the threshold and it could reach upto 98%.
                     Detailed analysis of variable shares will be released in v2.0.
                 </li>
                 <li>
-                    Do we need to sign in to pay ? Yes. To avoid mulitple pays from same account, sign in required.
+                    Do we need to sign in to pay ? Yes. To avoid mulitple pays from guest user, sign in required.
                 </li>
             </ul>
         </div>

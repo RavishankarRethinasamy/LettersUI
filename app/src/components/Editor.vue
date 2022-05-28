@@ -45,7 +45,7 @@ export default{
             toolbar_options: [
                     ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
                     ['code-block'],
-                    [ 'link', 'image', 'video', 'formula' ],
+                    [ 'link', 'image', 'formula' ],
                     [{ 'header': 1 }, { 'header': 2 }],               // custom button values
                     [{ 'list': 'ordered'}, { 'list': 'bullet' }],
                     [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript

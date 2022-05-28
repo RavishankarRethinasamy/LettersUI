@@ -5,8 +5,10 @@
     <div class="container" style="margin-top: 100px">
       <div class="row">
         <div class="col-8">
-          <div class="text-dark fs-2">{{ contents.display_name }}</div>
-          <div class="loader" v-html="JsonToHtml(contents.data)"></div>
+          <div class="text-dark fs-2">{{ contents.display_name }}
+               <span class="text-dark fs-6">{{ contents.metadata.ettr }}</span>
+          </div>
+          <div class="my-5" v-html="JsonToHtml(contents.data)"></div>
 
           <figure>
             <figcaption class="blockquote-footer my-3">
@@ -32,7 +34,7 @@
 
             <span class="mx-2">{{ contents.updates.pays }}</span>
             <div id="userHelp" class="form-text">
-              By clicking pay, you are increasing the ads share value to the writer.
+              By clicking pay, you are paying the user for this content.
               If you found this content worth, do register and pay and feel good that you
               paid. <a href="/details">Learn more</a>
             </div>
@@ -45,7 +47,7 @@
           >
           <p v-if="contents.type !== 'story'">
               <cite class="text-muted fs-6">
-                  Sign in before writing the answer to get the pay option to increase the share value of ads.
+                  Sign in before writing the answer to get the pay option.
                   <a href="/details">Learn more</a>
               </cite>
           </p>
@@ -113,7 +115,6 @@ export default {
         Header,
         Footer,
         Editor
-
     },
     data(){
         return{
@@ -126,7 +127,7 @@ export default {
             }
         }
     },
-    async beforeMount(){
+    async beforeCreate(){
         let readBlogUrl = urls().CORE_BASE + urls().CORE_APP + urls().GLOBAL_READ
         + "?blog_id=" + this.$route.params.id
         const response = await axios.get(readBlogUrl)

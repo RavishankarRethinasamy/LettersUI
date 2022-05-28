@@ -52,17 +52,17 @@
                         <span class="mx-1 fs-6">{{ con.created_by  }} </span>
                         at <span class="mx-1">{{ con.created_at }}</span>
                       </span>
-                      <span v-if="con.type == 'story'" class="mx-2" style="color: blue">
+                      <span v-if="con.type == 'story'" class="mx-2" style="color: black">
                         {{ con.pays }} pays
                       </span>
-                      <span v-if="con.type == 'story'">
-                          {{ readTime()  }}
+                      <span v-if="con.type == 'story'" style="color: black">
+                          {{ con.metadata.ettr }}
                       </span>
                       <a v-if="con.type == 'question'" 
                         class="mx-2"    
                         @click="readLetter(con.blog_id)"
                         href="#"
-                        style="color: blue">
+                        style="color: black">
                         write answer
                       </a>
 
@@ -119,7 +119,7 @@ export default {
         }
     },
 
-    async beforeMount()
+    async beforeCreate()
     {
         try{
             let listBlogsUrl = urls().CORE_BASE + urls().CORE_APP + urls().GLOBAL_LIST
@@ -147,9 +147,6 @@ export default {
         handlePaginate(e){
             this.$router.push(`/p/${e}`).then(res => this.$router.go())
         },
-        readTime(){
-            return '5 min read'
-        }
     },
 }
 </script>

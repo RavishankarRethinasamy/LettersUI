@@ -12,7 +12,7 @@ import { urls } from '../src/helper'
 export default {
 
   name: "App",
-  async created(){
+  async beforeCreate(){
         try{
             let getLoggedUserUrl = urls().VIM_BASE + urls().VIM_APP + urls().GET
             const response = await axios.get(getLoggedUserUrl);

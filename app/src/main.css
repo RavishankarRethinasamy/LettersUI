@@ -16,29 +16,29 @@
     width: 100%;
   }
   
-  .VuePagination{
-      margin-top: 2%;
-      margin-bottom: 2%;
-  }
-  
-  .VuePagination__pagination{
-      justify-content: center;
-      align-items: center;
-  }
-  
-  .VuePagination__count{
-      text-align: center;
-  }
+.VuePagination{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
 
-  pre {
-    background-color: rgb(93, 88, 133);
-    color: white;
-  }
-  
-  .ql-align-right {
-    text-align: right;
-  }
-  
-  .ql-align-center {
+.VuePagination__pagination{
+    justify-content: center;
+    align-items: center;
+}
+
+.VuePagination__count{
     text-align: center;
-  }
+}
+
+pre {
+background-color: rgb(93, 88, 133);
+color: white;
+}
+
+.ql-align-right {
+text-align: right;
+}
+
+.ql-align-center {
+text-align: center;
+}
