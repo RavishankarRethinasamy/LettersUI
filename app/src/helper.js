@@ -2,8 +2,8 @@
 
 export function urls(){
     return {
-        CORE_BASE: "http://localhost:19091",
-        VIM_BASE : "http://localhost:19092",
+        CORE_BASE: "https://localhost:19091",
+        VIM_BASE : "https://localhost:19092",
         VIM_APP : "/v1/user",
         CORE_APP : "/v1/blog",
         LIST : "/list",
