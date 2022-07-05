@@ -5,7 +5,7 @@
 
 <footer class="text-center text-lg-start bg-light text-muted">
   <!-- Section: Social media -->
-             <section class="mb-4 text-center">
+    <section class="mb-4 text-center">
 
       <a
         class="btn btn-link btn-floating btn-lg text-dark m-1"
@@ -45,8 +45,6 @@
         data-mdb-ripple-color="dark"
         ><i class="fab fa-youtube"></i
       ></a>
-
-       
 
     </section>
   <!-- Section: Social media -->
@@ -104,9 +102,8 @@
     Letters @2022
     <!-- <a class="text-reset fw-bold mx-auto" href="/">theletters.in</a> -->
     <span class="mx-2">v1.1</span>
-    <a href="" class="mx-2" style="color: grey">Privacy policy</a>
-    <a href="" class="mx-2" style="color: grey">Terms of service</a>
-    <a href="" class="mx-2" style="color: grey">Disclaimer</a>
+    <a href="/privacy" class="mx-2" style="color: grey">Privacy policy</a>
+    <a href="/terms" class="mx-2" style="color: grey">Terms of service</a>
   </div>
   
   <!-- Copyright -->

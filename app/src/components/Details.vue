@@ -8,7 +8,7 @@
             <ul>
                 <li>
                     Letters is a yet another content sharing platform where people can write stories and asking questions
-                    about anything and everything from A to Z..Strictly follow the <a href="#">Terms of service</a>.
+                    about anything and everything from A to Z..Strictly follow the <a href="/terms">Terms of service</a>.
                 </li>
             </ul>
         </div>

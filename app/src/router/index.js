@@ -5,8 +5,20 @@ import Write from "../components/Write.vue"
 import UserList from "../components/UserList.vue"
 import Team from "../components/Team.vue"
 import Details from "../components/Details.vue"
+import Privacy from "../components/Privacy.vue"
+import Terms from "../components/Terms.vue"
 
 const routes = [
+    {
+        path: '/privacy',
+        name: 'Privacy',
+        component: Privacy
+        },
+    {
+        path: '/terms',
+        name: 'Terms',
+        component: Terms
+            },
   {
     path: '/',
     name: 'List',
