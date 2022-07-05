@@ -328,9 +328,6 @@
                                                 <span class="visually-hidden">Loading...</span>
                                             </div>
                                     </div>
-                                    <div id="userHelp" class="form-text">
-                                        Email has been sent with OTP.
-                                    </div>
                                     </div>
 
                                     <div v-if="showReset">
@@ -368,7 +365,7 @@
                                         </div>
                                     </div>
                                     <div v-if="succShow.resetPass">
-                                        <cite class="fs-4">{{ succShow.resetPass }}</cite>
+                                        <cite class="fs-6">{{ succShow.resetPass }}</cite>
                                     </div>
                                 </form>
                             </div>
@@ -552,6 +549,7 @@ export default {
         },
         async handleOTP(){
             this.spinner.otpValidator = 1
+            this.succShow.resetPass = ""
             let optValidate = urls().VIM_BASE + urls().FORGOT_PASSWORD
             const response = await axios.post(optValidate, {
                 "otp": this.otp
@@ -574,7 +572,7 @@ export default {
             this.spinner.rP = 1
             let resetPwd = urls().VIM_BASE + urls().RESET_PASSWORD
             const response = await axios.post(resetPwd, {
-                "email": this.email,
+                "email": this.forgotEmail,
                 "password": this.password
             })
             console.log(response.data)
