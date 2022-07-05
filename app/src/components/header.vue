@@ -274,6 +274,9 @@
                                     </div>
                                 </div>
                                 <cite v-if="errShow.register" class="error fs-6">{{ errShow.register }}</cite>
+                                <cite class="fs-6">By sign up, you are agreeing to the 
+                                    <a href="/terms">terms of service</a>
+                                     and <a href="/privacy">privacy policy</a></cite>
                                 <div class="text-center">
                                 <p>Already a member? <a href="#!" data-mdb-toggle="modal" data-mdb-target="#LoginModal">Login</a></p>
                                 </div>
