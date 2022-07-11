@@ -8,7 +8,8 @@
             <ul>
                 <li>
                     Letters is a yet another content sharing platform where people can write stories and asking questions
-                    about anything and everything from A to Z..Strictly follow the <a href="/terms">Terms of service</a>.
+                    about anything and everything from A to Z following the <a href="/terms">Terms of service</a> and 
+                    <a href="/privacy">privacy policy</a>.
                 </li>
             </ul>
         </div>
@@ -49,15 +50,15 @@
         </div>
 
         <div id="v1.2">
-            <h5>What is the upcoming version ?</h5>
+            <h5>What will be the upcoming version ?</h5>
                 <ul>
                     V1.2 will be the upcoming version and the support included
                     <ol>
                         <li>
-                            Account creation through Google, Facebook, Twitter, LinkedIn and Github.
+                            Account creation through Google.
                         </li>
                         <li>
-                            Detailed my profile and other options.
+                            Detailed my profile and enhanced writing options.
                         </li>
                         <li>
                             More detailed analysis on ads and pays of user's letters
@@ -67,12 +68,10 @@
         </div>
 
         <div id="v2.0">
-            <h5>what is the monetized version ?</h5>
+            <h5>what will be the monetized version ?</h5>
             <ul>
                 <li>
-                    V2.0 will be the major and the complete monetized version. It will be released after v1.2. 
-                    More details will be updated regarding pays, shares and payments. Withdraw money support also will
-                    be included.
+                    V2.0 will be the major and the complete monetized version. Release date yet to be decided.
                 </li>
             </ul>
         </div>

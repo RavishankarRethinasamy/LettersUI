@@ -14,10 +14,16 @@
 
                     Have morethan 3 years of experiance in this field. Holds 
                     Bachelor of Engineering in Electronics and Instrumentation from SRM Valliammai, 
-                    Chennai, TamilNadu. Grateful that started this journey with 
+                    Chennai, TamilNadu. Grateful that started this journey as a intern at 
                     <a href="https://www.intellectdesign.com/" target="blank">Intellect Design Arena</a>
-                    and 
+                    and as a developer at
                     <a href="https://www.corestack.io/" target="blank">Corestack</a>
+                    <p class="my-3">
+                        Email Id: ravishankar@theletters.in
+                    </p>
+                    <p>
+                        LinkedIn: <a href="https://www.linkedin.com/in/ravishankar-rethinasamy-2824b4145/" target="_blank_">click here</a>
+                    </p>
                 </div>
 
                 <div style="margin-top: 8%">

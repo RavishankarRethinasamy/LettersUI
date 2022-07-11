@@ -24,8 +24,8 @@
                      <div class="collapse navbar-collapse" id="navbarExample01">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item active">
-                                <a href="/" class="navbar-brand" >
-                                <span class="fs-4" style="color: blue">L</span>etters</a>
+                                <router-link to="/" class="navbar-brand" >
+                                <span class="fs-4" style="color: blue">L</span>etters</router-link>
                             </li>
                             <div class="input-group ps-5">
                                 <div id="navbar-search-autocomplete" class="form-outline border" style="width: 600px">
@@ -41,7 +41,7 @@
                     
                     <ul v-if="!isUserLogged" class="navbar-nav flex-row">
                         <li class="nav-item">
-                            <a href="/write" class="btn btn-primary mx-1">Write</a>
+                            <router-link to="/write" class="btn btn-primary mx-1">Write</router-link>
                         </li>
                         <li class="nav-item">
                             <button type="button" class="btn btn-primary mx-1" data-mdb-toggle="modal" data-mdb-target="#LoginModal">
@@ -53,7 +53,7 @@
 
                     <ul v-if="isUserLogged" class="navbar-nav flex-row">
                         <li class="nav-item">
-                            <a href="/write" class="btn btn-primary mx-1">Write</a>
+                            <router-link to="/write" class="btn btn-primary mx-1">Write</router-link>
                         </li>
                         <div class="dropdown">
                             <button
@@ -66,8 +66,8 @@
                                 Hello, {{ isUserLogged.username }}
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li><a class="dropdown-item" href="/ml">My profile</a></li>
-                                <li><a class="dropdown-item" href="/" @click.prevent ="handleLogOut">Log out</a></li>
+                                <li><router-link class="dropdown-item" to="/ml">My profile</router-link></li>
+                                <li><router-link class="dropdown-item" to="/" @click.prevent ="handleLogOut">Log out</router-link></li>
                             </ul>
                         </div>
 
